@@ -1,7 +1,7 @@
 ---
 title: My first post using Novela by Narative
-author: Dennis Brotzky
-date: 2019-04-30
+author: Iris Chew
+date: 2021-04-30
 hero: ./images/hero.jpg
 excerpt: With the growing community interest in Gatsby, we hope to create more resources that make it easier for anyone to grasp the power of this incredible tool.
 ---
@@ -40,11 +40,11 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 2. Another item
 3. Actual numbers don't matter, just that it's a number
 
-- Unordered list can use asterisks
+-   Unordered list can use asterisks
 
-* Or minuses
+*   Or minuses
 
-- Or pluses
+-   Or pluses
 
 ## Links
 
@@ -85,8 +85,8 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 ## Code and Syntax Highlighting
 
 ```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
+var s = 'JavaScript syntax highlighting'
+alert(s)
 ```
 
 ```
@@ -97,13 +97,13 @@ But let's throw in a <b>tag</b>.
 ### JSX
 
 ```jsx
-import React from "react";
-import { ThemeProvider } from "theme-ui";
-import theme from "./theme";
+import React from 'react'
+import { ThemeProvider } from 'theme-ui'
+import theme from './theme'
 
-export default props => (
-  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
-);
+export default (props) => (
+    <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+)
 ```
 
 ## Blockquotes
