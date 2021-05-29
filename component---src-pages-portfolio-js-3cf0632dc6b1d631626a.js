@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{E6xs:function(n,t,o){"use strict";o.r(t);o("q1tI");var s=o("dH/O"),l=o("noox"),u=o("WsIH"),c=o("qKvR");t.default=function(){return Object(c.jsx)(s.a,null,Object(c.jsx)(u.a,null),Object(c.jsx)(l.a,null,Object(c.jsx)("div",null,"Portfolio")))}}}]);
-//# sourceMappingURL=component---src-pages-portfolio-js-3cf0632dc6b1d631626a.js.map
