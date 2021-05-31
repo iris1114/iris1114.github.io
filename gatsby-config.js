@@ -19,7 +19,7 @@ module.exports = {
             },
             {
                 name: `linkedin`,
-                url: `www.linkedin.com/in/iris-chew`,
+                url: `https://www.linkedin.com/in/iris-chew`,
             },
             {
                 name: `youtube`,
@@ -29,7 +29,7 @@ module.exports = {
     },
     plugins: [
         {
-            resolve: '@iris1114/gatsby-theme-new',
+            resolve: '@iris1114/gatsby-theme-blog',
             options: {
                 contentPosts: 'content/posts',
                 contentAuthors: 'content/authors',
