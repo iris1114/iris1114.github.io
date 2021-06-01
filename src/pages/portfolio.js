@@ -4,6 +4,9 @@ import Layout from '@iris1114/gatsby-theme-blog/src/components/Layout'
 import Section from '@iris1114/gatsby-theme-blog/src/components/Section'
 import SEO from '@iris1114/gatsby-theme-blog/src/components/SEO'
 import styled from 'styled-components'
+import StackGrid from 'react-stack-grid'
+import { portfolio } from '../assets/js/data'
+import '../assets/css/style.css'
 
 function Portfolio() {
     return (
@@ -12,7 +15,13 @@ function Portfolio() {
             <Section>
                 <PortfolioSection>
                     <h1 className="title">Portfolio</h1>
-                    <div className="container"></div>
+                    <div className="container">
+                        <StackGrid columnWidth={150}>
+                            {portfolio.map((project, index) => {
+                                return <div className="f-lg-2xl">test</div>
+                            })}
+                        </StackGrid>
+                    </div>
                 </PortfolioSection>
             </Section>
         </Layout>
