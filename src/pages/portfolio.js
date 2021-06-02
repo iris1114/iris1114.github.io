@@ -7,6 +7,7 @@ import styled from 'styled-components'
 import StackGrid from 'react-stack-grid'
 import { portfolio } from '../assets/js/data'
 import '../assets/css/style.css'
+import Card from '../components/Card'
 
 function Portfolio() {
     return (
@@ -16,9 +17,19 @@ function Portfolio() {
                 <PortfolioSection>
                     <h1 className="title">Portfolio</h1>
                     <div className="container">
-                        <StackGrid columnWidth={150}>
+                        <StackGrid columnWidth={500}>
                             {portfolio.map((project, index) => {
-                                return <div className="f-lg-2xl">test</div>
+                                return (
+                                    <Card
+                                        key={project.id}
+                                        title={project.title}
+                                        desc={project.desc}
+                                        imgUrl={project.imageSrc}
+                                        videoSrc={project.videoSrc}
+                                        demoUrl={project.demoUrl}
+                                        tags={project.tags}
+                                    />
+                                )
                             })}
                         </StackGrid>
                     </div>
@@ -29,7 +40,6 @@ function Portfolio() {
 }
 
 const PortfolioSection = styled.div`
-    margin: 80px 0px;
     text-align: center;
 
     .title {
