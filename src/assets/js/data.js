@@ -2,24 +2,29 @@ import cakeImg from '../images/cake.png'
 import drinkImg from '../images/drink.png'
 import userImg from '../images/user.png'
 import ourskyImg from '../images/oursky.png'
-import cakeVideo from '../images/cake.mp4'
+import restCountries from '../images/restCountries.png'
+import userManage from '../images/userManage.jpg'
+import gulp4 from '../images/gulp4.png'
 
 export const portfolio = [
+    {
+        id: 5,
+        title: 'REST Countries API with color theme switcher',
+        desc: '',
+        imageSrc: restCountries,
+        videoSrc: null,
+        demoUrl: 'https://secret-cake.netlify.app/',
+        tags: ['react', 'dark mode', 'search', 'sort'],
+    },
     {
         id: 1,
         title: 'E-Commerce Website - Secret Cake',
         desc:
             'A bakery website that can create your own custom greeting cards.',
         imageSrc: cakeImg,
-        videoSrc: cakeVideo,
+        videoSrc: null,
         demoUrl: 'https://secret-cake.netlify.app/',
-        tags: [
-            'react',
-            'konva',
-            'styled-components',
-            'canvas',
-            'shopping cart',
-        ],
+        tags: ['react', 'canvas', 'shopping cart'],
     },
     {
         id: 2,
@@ -29,7 +34,7 @@ export const portfolio = [
         imageSrc: userImg,
         videoSrc: null,
         demoUrl: 'https://user-login-signup-app.netlify.app',
-        tags: ['react', 'CRUD', 'styled-components', 'login', 'signup', 'jwt'],
+        tags: ['react', 'CRUD', 'login', 'signup', 'jwt'],
     },
     {
         id: 3,
@@ -48,5 +53,23 @@ export const portfolio = [
         videoSrc: null,
         demoUrl: 'https://iris1114.github.io/pure-css-oursky-homepage/',
         tags: ['sass', 'rwd', 'gulp'],
+    },
+    {
+        id: 6,
+        title: 'CRUD Data Table without framework',
+        desc: '',
+        imageSrc: userManage,
+        videoSrc: null,
+        demoUrl: 'https://iris1114.github.io/javascript_CRUD-data-table/',
+        tags: ['javascript', 'html', 'css'],
+    },
+    {
+        id: 7,
+        title: 'Gulp 4 demo',
+        desc: '',
+        imageSrc: gulp4,
+        videoSrc: null,
+        demoUrl: 'https://iris1114.github.io/javascript_CRUD-data-table/',
+        tags: ['gulp', 'npm'],
     },
 ]

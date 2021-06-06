@@ -1420,10 +1420,10 @@
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
   integrity sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==
 
-"@iris1114/gatsby-theme-blog@^1.0.4":
-  version "1.0.4"
-  resolved "https://npm.pkg.github.com/download/@iris1114/gatsby-theme-blog/1.0.4/5992657361e7ae51719ec61e2e2365d64babc4bc68c2071809b2df90853f6e9b#195532e0c40d57740f35ebf4aaf94facf09de89e"
-  integrity sha512-il2gUtEDFM9wGzMR2nSLPLBIw1pSMmaDjSuA1Fqhe3aDsi+idVB3VIoZMg8L2b+sAtECywcbPAFMPE9+iuRb8Q==
+"@iris1114/gatsby-theme-blog@^1.0.7":
+  version "1.0.7"
+  resolved "https://npm.pkg.github.com/download/@iris1114/gatsby-theme-blog/1.0.7/c4d79a8380307978193336124685368267ce3803a9e300dfbf5fe1f2fcc13b0c#cfd10e0f2e722597b4989146ec2152d4f0f12bde"
+  integrity sha512-dpRPyj6ncAXdrdDBYvRt+xiVfspYvvbr/+4AIl5Q5ycAwVxASsvyATQOax/nglMe/IzYugAjJZlC+98xizbHEA==
   dependencies:
     "@blocks/kit" "^0.0.28"
     "@emotion/core" "^10.0.14"
