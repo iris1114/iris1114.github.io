@@ -1,61 +1,75 @@
-import React from 'react'
-import StackGrid from 'react-stack-grid'
-import Layout from '@iris1114/gatsby-theme-blog/src/components/Layout'
-import Section from '@iris1114/gatsby-theme-blog/src/components/Section'
-import SEO from '@iris1114/gatsby-theme-blog/src/components/SEO'
-import styled from 'styled-components'
-import { portfolio } from '../assets/js/data'
-import '../assets/css/style.css'
-import Card from '../components/Card'
+import React from "react";
+import Layout from "@iris1114/gatsby-theme-blog/src/components/Layout";
+import Section from "@iris1114/gatsby-theme-blog/src/components/Section";
+import SEO from "@iris1114/gatsby-theme-blog/src/components/SEO";
+import styled from "styled-components";
+import { portfolio } from "../assets/js/data";
+import "../assets/css/style.css";
+import Card from "../components/Card";
+import Masony from "react-masonry-component";
+
+const masonryOptions = {
+  fitWidth: true,
+  columnWidth: 300,
+  gutter: 20,
+  itemSelector: ".project",
+};
 
 function Portfolio() {
-    return (
-        <Layout>
-            <SEO />
-            <Section>
-                <PortfolioSection>
-                    <h1 className="title">Portfolio</h1>
-                    <div className="grid_section">
-                        <StackGrid
-                            monitorImagesLoaded={true}
-                            columnWidth={330}
-                            gutterWidth={50}
-                            gutterHeight={100}
-                            appearDelay={50}
-                            duration={1000}
-                        >
-                            {portfolio.map((project) => {
-                                return (
-                                    <Card
-                                        key={project.id}
-                                        title={project.title}
-                                        desc={project.desc}
-                                        imgUrl={project.imageSrc}
-                                        videoSrc={project.videoSrc}
-                                        demoUrl={project.demoUrl}
-                                        tags={project.tags}
-                                    />
-                                )
-                            })}
-                        </StackGrid>
-                    </div>
-                </PortfolioSection>
-            </Section>
-        </Layout>
-    )
+  return (
+    <Layout>
+      <SEO />
+      <Section>
+        <PortfolioSection>
+          <h1 className="title">Portfolio</h1>
+
+          <Masony
+            className="list"
+            options={masonryOptions}
+            disableImagesLoaded={false}
+            updateOnEachImageLoad={false}
+          >
+            {portfolio &&
+              portfolio.map((project, index) => (
+                <div className="project" key={index}>
+                  <Card
+                    key={project.id}
+                    title={project.title}
+                    desc={project.desc}
+                    imgUrl={project.imageSrc}
+                    videoSrc={project.videoSrc}
+                    demoUrl={project.demoUrl}
+                    tags={project.tags}
+                  />
+                </div>
+              ))}
+          </Masony>
+        </PortfolioSection>
+      </Section>
+    </Layout>
+  );
 }
 
 const PortfolioSection = styled.div`
-    text-align: center;
+  text-align: center;
 
-    .title {
-        font-size: 30px;
-        padding-top: 80px;
-    }
+  .title {
+    font-size: 30px;
+    padding-top: 80px;
+  }
 
-    .grid_section {
-        margin: 50px 0px;
-    }
-`
+  .list {
+    width: 100%;
+    list-style: none;
+    margin: 50px auto;
+  }
 
-export default Portfolio
+  .project {
+    display: flex;
+    width: 300px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+    margin: 20px 0;
+  }
+`;
+
+export default Portfolio;
