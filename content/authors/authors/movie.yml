@@ -1,0 +1,6 @@
+name: Movie
+bio: |
+    紀錄電影心得，與一些我思我想～
+avatar: ./avatars/movie.png
+social:
+featured: false

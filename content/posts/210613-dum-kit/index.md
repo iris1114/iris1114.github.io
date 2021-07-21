@@ -1,6 +1,6 @@
 ---
 title: "挑戰JavaScript 30 Day1"
-author: Iris Chew
+author: JavaScript30
 date: 2021-06-13
 hero: ./images/drumKit.png
 excerpt:

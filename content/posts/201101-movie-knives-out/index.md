@@ -1,6 +1,6 @@
 ---
 title: "Knives Out 電影心得"
-author: Iris Chew
+author: Movie
 date: 2020-11-01
 hero: ./images/knivesout.jpg
 excerpt: 我不是專業影評人，純粹想紀錄一下看完這部電影的感受。朋友推薦我看，覺得很好看～來分享～
