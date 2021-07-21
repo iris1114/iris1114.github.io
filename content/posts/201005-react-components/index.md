@@ -1,9 +1,10 @@
 ---
-title: 'React Components #05'
+title: "React Components #05"
 author: Iris Chew
 date: 2020-10-05
 hero: ./images/react05.png
 excerpt: Components 是可以重複被使用的，概念上來說，component 就像是 JavaScript 的 function，它接收任意的參數（react 為「props」）並且回傳至畫面的 React element。
+secret: true
 ---
 
 Components 是可以重複被使用的，概念上來說，component 就像是 JavaScript 的 function，它接收任意的參數（react 為「props」）並且回傳至畫面的 React element。
@@ -14,18 +15,18 @@ Components 是可以重複被使用的，概念上來說，component 就像是 J
 
 ```javascript=
 function Welcome(props) {
-    return <h1>hello {props.name}</h1>
+  return <h1>hello {props.name}</h1>;
 }
-const rootElement = document.getElementById('root')
-ReactDOM.render(Welcome({ name: 'iris' }), rootElement)
+const rootElement = document.getElementById("root");
+ReactDOM.render(Welcome({ name: "iris" }), rootElement);
 ```
 
 ```javascript=
 function Welcome2(props) {
-    return <h1>hello2 {props.name}</h1>
+  return <h1>hello2 {props.name}</h1>;
 }
-const rootElement2 = document.getElementById('root2')
-ReactDOM.render(<Welcome2 name="iris" />, rootElement2)
+const rootElement2 = document.getElementById("root2");
+ReactDOM.render(<Welcome2 name="iris" />, rootElement2);
 ```
 
 以上兩種寫法產生的結果相同，只是 render 方式不同。
@@ -38,14 +39,14 @@ ReactDOM.render(<Welcome2 name="iris" />, rootElement2)
 
 ```javascript=
 function Welcome3(props) {
-    return (
-        <h1>
-            {props.title} {props.name}
-        </h1>
-    )
+  return (
+    <h1>
+      {props.title} {props.name}
+    </h1>
+  );
 }
-const rootElement3 = document.getElementById('root3')
-ReactDOM.render(<Welcome3 title="hello3" name="iris" />, rootElement3)
+const rootElement3 = document.getElementById("root3");
+ReactDOM.render(<Welcome3 title="hello3" name="iris" />, rootElement3);
 ```
 
 可以定義多個 props，如上面例子，新增了 `props.title` 。
@@ -58,16 +59,16 @@ ReactDOM.render(<Welcome3 title="hello3" name="iris" />, rootElement3)
 
 ```javascript=
 class Welcome4 extends React.Component {
-    render() {
-        return (
-            <h1>
-                {this.props.title} {this.props.name}
-            </h1>
-        )
-    }
+  render() {
+    return (
+      <h1>
+        {this.props.title} {this.props.name}
+      </h1>
+    );
+  }
 }
-const rootElement4 = document.getElementById('root4')
-ReactDOM.render(<Welcome4 title="hello4" name="iris" />, rootElement4)
+const rootElement4 = document.getElementById("root4");
+ReactDOM.render(<Welcome4 title="hello4" name="iris" />, rootElement4);
 ```
 
 > 可參考我寫的 [TryItCode 例子 4](https://codesandbox.io/s/05component-and-props-fxzz6)
@@ -80,24 +81,24 @@ ReactDOM.render(<Welcome4 title="hello4" name="iris" />, rootElement4)
 
 ```javascript=
 function Welcome5(props) {
-    return <h1>Hello5, {props.name}</h1>
+  return <h1>Hello5, {props.name}</h1>;
 }
-const welcome6 = <Welcome5 name="kyoyo" />
-const welcomeVariable = <h1> Hello5 , Variable</h1>
+const welcome6 = <Welcome5 name="kyoyo" />;
+const welcomeVariable = <h1> Hello5 , Variable</h1>;
 
 function App() {
-    return (
-        <div>
-            <Welcome5 name="Sara" />
-            <Welcome5 name="Cahal" />
-            <Welcome5 name="Edite" />
-            {welcome6}
-            {welcomeVariable}
-        </div>
-    )
+  return (
+    <div>
+      <Welcome5 name="Sara" />
+      <Welcome5 name="Cahal" />
+      <Welcome5 name="Edite" />
+      {welcome6}
+      {welcomeVariable}
+    </div>
+  );
 }
 
-ReactDOM.render(<App />, document.getElementById('root5'))
+ReactDOM.render(<App />, document.getElementById("root5"));
 ```
 
 > 可參考我寫的 [TryItCode 例子 5](https://codesandbox.io/s/05component-and-props-fxzz6)
@@ -112,82 +113,78 @@ ReactDOM.render(<App />, document.getElementById('root5'))
 
 ```javascript=
 function formatDate(date) {
-    return date
+  return date;
 }
 
 function Comment(props) {
-    return (
-        <div className="Comment">
-            <div className="UserInfo">
-                <img
-                    className="Avatar"
-                    src={props.author.avatarUrl}
-                    alt={props.author.name}
-                />
-                <div className="UserInfo-name">{props.author.name}</div>
-            </div>
-            <div className="Comment-text">{props.text}</div>
-            <div className="Comment-date">{formatDate(props.date)}</div>
-        </div>
-    )
+  return (
+    <div className="Comment">
+      <div className="UserInfo">
+        <img
+          className="Avatar"
+          src={props.author.avatarUrl}
+          alt={props.author.name}
+        />
+        <div className="UserInfo-name">{props.author.name}</div>
+      </div>
+      <div className="Comment-text">{props.text}</div>
+      <div className="Comment-date">{formatDate(props.date)}</div>
+    </div>
+  );
 }
 
-const rootElement6 = document.getElementById('root6')
+const rootElement6 = document.getElementById("root6");
 const author = {
-    avatarUrl: 'https://picsum.photos/200/200/?random=1',
-    name: 'iris',
-}
+  avatarUrl: "https://picsum.photos/200/200/?random=1",
+  name: "iris",
+};
 
 ReactDOM.render(
-    <Comment author={author} text="hello i'm iris" date="2020-05-31" />,
-    rootElement6
-)
+  <Comment author={author} text="hello i'm iris" date="2020-05-31" />,
+  rootElement6
+);
 ```
 
 我們可以把 Comment 裡面的 `calssName=UserInfo` 這個段落，拆為另一新的 component （UserInfo) , 甚至拆分更細的話，就是把 UserInfo Component 裡面的 `img` 拆為另一個更小，新的 component （Author）。
 
 ```javascript=
 function formatDate(date) {
-    return date
+  return date;
 }
 
 function Author(props) {
-    return (
-        <img
-            className="Avatar"
-            src={props.user.avatarUrl}
-            alt={props.user.name}
-        />
-    )
+  return (
+    <img className="Avatar" src={props.user.avatarUrl} alt={props.user.name} />
+  );
 }
 
 function UserInfo(props) {
-    return (
-        <div className="UserInfo">
-            <Author user={props.user} />
-            <div className="UserInfo-name">{props.user.name}</div>
-        </div>
-    )
+  return (
+    <div className="UserInfo">
+      <Author user={props.user} />
+      <div className="UserInfo-name">{props.user.name}</div>
+    </div>
+  );
 }
 
 function Comment(props) {
-    return (
-        <div className="Comment">
-            <UserInfo user={props.author} />
-            <div className="Comment-text">{props.text}</div>
-            <div className="Comment-date">{formatDate(props.date)}</div>
-        </div>
-    )
+  return (
+    <div className="Comment">
+      <UserInfo user={props.author} />
+      <div className="Comment-text">{props.text}</div>
+      <div className="Comment-date">{formatDate(props.date)}</div>
+    </div>
+  );
 }
-const rootElement6 = document.getElementById('root6')
+const rootElement6 = document.getElementById("root6");
 const author = {
-    avatarUrl: 'https://picsum.photos/200/200/?random=1',
-    name: 'iris',
-}
+  avatarUrl: "https://picsum.photos/200/200/?random=1",
+  name: "iris",
+};
 ReactDOM.render(
-    <Comment author={author} text="hello i'm iris" date="2020-05-31" />,
-    rootElement6
-)
+  <Comment author={author} text="hello i'm iris" date="2020-05-31" />,
+  rootElement6
+);
 ```
 
 這樣我們看 Comment Component 就會變得更簡潔了。通常如果會被重複使用我們才會把他拆成更小的 component ，方便維護。
@@ -200,7 +197,7 @@ ReactDOM.render(
 
 ```javascript=
 function sum(a, b) {
-    return a + b
+  return a + b;
 }
 ```
 
@@ -208,7 +205,7 @@ function sum(a, b) {
 
 ```javascript=
 function withdraw(account, amount) {
-    account.total -= amount
+  account.total -= amount;
 }
 ```
 

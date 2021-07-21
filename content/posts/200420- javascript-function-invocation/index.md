@@ -1,9 +1,10 @@
 ---
-title: 'JavaScript Function Closures #10'
+title: "JavaScript Function Closures #10"
 author: Iris Chew
 date: 2020-04-20
 hero: ./images/js10.png
 excerpt: The code inside a function is not executed when the function is defined.The code inside a function is executed when the function is invoked. It is common to use the term "call a function" instead of "invoke a function".
+secret: true
 ---
 
 The code inside a function is not executed when the function is defined.The code inside a function is executed when the function is invoked. It is common to use the term "call a function" instead of "invoke a function".
@@ -23,11 +24,11 @@ When a function is called without an owner object, the value of this becomes the
 _當函數沒有被自身物件調用時 this 的值就會變成全局物件。在 web 瀏覽器中全局物件是 window。_
 
 ```javascript
-var x = myFunction() // x will be the window object
+var x = myFunction(); // x will be the window object
 function myFunction() {
-    return this
+  return this;
 }
-document.getElementById('demo').innerHTML = x //[object Window]
+document.getElementById("demo").innerHTML = x; //[object Window]
 ```
 
 ### Invoking a Function as a Method
@@ -37,26 +38,26 @@ _在 JavaScript 中你可以將函數定義為物件的方法。_
 
 ```javascript
 var myObject = {
-    firstName: 'John',
-    lastName: 'Doe',
-    fullName: function() {
-        return this.firstName + ' ' + this.lastName
-    },
-}
-document.getElementById('demo').innerHTML = myObject.fullName() // Will return "John Doe"
+  firstName: "John",
+  lastName: "Doe",
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  },
+};
+document.getElementById("demo").innerHTML = myObject.fullName(); // Will return "John Doe"
 ```
 
 The thing called this, is the object that "owns" the JavaScript code. In this case the value of this is myObject.
 
 ```javascript
 var myObject = {
-    firstName: 'John',
-    lastName: 'Doe',
-    fullName: function() {
-        return this
-    },
-}
-document.getElementById('demo').innerHTML = myObject.fullName() // Will return [object Object]
+  firstName: "John",
+  lastName: "Doe",
+  fullName: function() {
+    return this;
+  },
+};
+document.getElementById("demo").innerHTML = myObject.fullName(); // Will return [object Object]
 ```
 
 ### Invoking a Function with a Function Constructor
@@ -67,13 +68,13 @@ _如果函數調用前使用了 new 關鍵字, 則是調用了構造函數。 �
 ```javascript
 // This is a function constructor:
 function myFunction(arg1, arg2) {
-    this.firstName = arg1
-    this.lastName = arg2
+  this.firstName = arg1;
+  this.lastName = arg2;
 }
 
 // This creates a new object
-var x = new myFunction('John', 'Doe')
-x.firstName // Will return "John"
+var x = new myFunction("John", "Doe");
+x.firstName; // Will return "John"
 ```
 
 ### The JavaScript call() Method
@@ -83,19 +84,19 @@ With call(), an object can use a method belonging to another object.
 
 ```javascript
 var person = {
-    fullName: function() {
-        return this.firstName + ' ' + this.lastName
-    },
-}
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  },
+};
 var person1 = {
-    firstName: 'John',
-    lastName: 'Doe',
-}
+  firstName: "John",
+  lastName: "Doe",
+};
 var person2 = {
-    firstName: 'Mary',
-    lastName: 'Doe',
-}
-person.fullName.call(person1) // Will return "John Doe"
+  firstName: "Mary",
+  lastName: "Doe",
+};
+person.fullName.call(person1); // Will return "John Doe"
 ```
 
 ### The call() Method with Arguments
@@ -104,15 +105,15 @@ The call() method can accept arguments:
 
 ```javascript
 var person = {
-    fullName: function(city, country) {
-        return this.firstName + ' ' + this.lastName + ',' + city + ',' + country
-    },
-}
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  },
+};
 var person1 = {
-    firstName: 'John',
-    lastName: 'Doe',
-}
-person.fullName.call(person1, 'Oslo', 'Norway')
+  firstName: "John",
+  lastName: "Doe",
+};
+person.fullName.call(person1, "Oslo", "Norway");
 ```
 
 ### The JavaScript apply() Method
@@ -121,15 +122,15 @@ The apply() method is similar to the call() method
 
 ```javascript
 var person = {
-    fullName: function() {
-        return this.firstName + ' ' + this.lastName
-    },
-}
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  },
+};
 var person1 = {
-    firstName: 'Mary',
-    lastName: 'Doe',
-}
-person.fullName.apply(person1) // Will return "Mary Doe"
+  firstName: "Mary",
+  lastName: "Doe",
+};
+person.fullName.apply(person1); // Will return "Mary Doe"
 ```
 
 ### The Difference Between call() and apply()
@@ -139,26 +140,26 @@ The apply() method takes arguments as an array.
 
 ```javascript
 var person = {
-    fullName: function(city, country) {
-        return this.firstName + ' ' + this.lastName + ',' + city + ',' + country
-    },
-}
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  },
+};
 var person1 = {
-    firstName: 'John',
-    lastName: 'Doe',
-}
-person.fullName.apply(person1, ['Oslo', 'Norway'])
-person.fullName.call(person1, 'Oslo', 'Norway')
+  firstName: "John",
+  lastName: "Doe",
+};
+person.fullName.apply(person1, ["Oslo", "Norway"]);
+person.fullName.call(person1, "Oslo", "Norway");
 ```
 
 ### Simulate a Max Method on Arrays
 
 ```javascript
-Math.max(1, 2, 3) // Will return 3
-Math.max.apply(null, [1, 2, 3]) // Will also return 3
-Math.max.apply(Math, [1, 2, 3]) // Will also return 3
-Math.max.apply(' ', [1, 2, 3]) // Will also return 3
-Math.max.apply(0, [1, 2, 3]) // Will also return 3
+Math.max(1, 2, 3); // Will return 3
+Math.max.apply(null, [1, 2, 3]); // Will also return 3
+Math.max.apply(Math, [1, 2, 3]); // Will also return 3
+Math.max.apply(" ", [1, 2, 3]); // Will also return 3
+Math.max.apply(0, [1, 2, 3]); // Will also return 3
 ```
 
 ### JavaScript Strict Mode

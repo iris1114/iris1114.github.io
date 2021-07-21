@@ -1,9 +1,10 @@
 ---
-title: 'JSX & Visual Dom 介紹#03'
+title: "JSX & Visual Dom 介紹#03"
 author: Iris Chew
 date: 2020-10-03
 hero: ./images/react03.png
 excerpt: 一開始看到 JSX 我就覺得很混亂，為什麼會有 JavaScript 又有 HTML,看起來很亂。沒錯，上一篇文章有提到， React 就是藉由 JavaScript 產生 HTML 。
+secret: true
 ---
 
 ## JSX 介紹
@@ -18,7 +19,7 @@ JSX 就是 Javascript 和 XML 結合的一種格式，允許使用 JavaScript �
 #### JSX 寫法
 
 ```javascript=
-const element = <h1 className="greeting">Hello, World!</h1>
+const element = <h1 className="greeting">Hello, World!</h1>;
 ```
 
 等同於
@@ -27,10 +28,10 @@ const element = <h1 className="greeting">Hello, World!</h1>
 
 ```javascript=
 const element = React.createElement(
-    'h1',
-    { className: 'greeting' },
-    'Hello, World!'
-)
+  "h1",
+  { className: "greeting" },
+  "Hello, World!"
+);
 ```
 
 從上方例子就可以看出 JSX 語法大量簡化了我們的工作。Babel 將 JSX 直接轉換為 React.createElement() 的程式 ， 讓我們更直觀快速。
@@ -68,8 +69,8 @@ const element = React.createElement(
 
 ```javascript=
 const App = () => {
-    return <div className="App">This is my first react app!</div>
-}
+  return <div className="App">This is my first react app!</div>;
+};
 ```
 
 以下語法則會報錯(沒有一個最外層包住所有內容的 tag)

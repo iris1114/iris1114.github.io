@@ -1,9 +1,10 @@
 ---
-title: 'Render Element #04'
+title: "Render Element #04"
 author: Iris Chew
 date: 2020-10-04
 hero: ./images/react04.png
 excerpt: 建立 React Apps 最小的單位是 element。而 element 是由 component 所「組成」的。
+secret: true
 ---
 
 建立 React Apps 最小的單位是 element。而 element 是由 component 所「組成」的。
@@ -24,8 +25,8 @@ excerpt: 建立 React Apps 最小的單位是 element。而 element 是由 compo
 example：
 
 ```javascript=
-const element = <h1>Hello, world</h1>
-ReactDOM.render(element, document.getElementById('root'))
+const element = <h1>Hello, world</h1>;
+ReactDOM.render(element, document.getElementById("root"));
 ```
 
 > 可參考我寫的 [TryItCode 例子 1](https://codesandbox.io/s/react-learning-render-element4-6b7jg?file=/src/index.js)
@@ -42,18 +43,18 @@ html 一樣有：
 
 ```javascript=
 function timeUpdate() {
-    const localTime = new Date().toLocaleTimeString()
-    const element2 = (
-        <div>
-            <h1>Hello,world</h1>
-            <h2>It's {localTime}</h2>
-        </div>
-    )
-    const rootElement2 = document.getElementById('root2')
-    ReactDOM.render(element2, rootElement2)
+  const localTime = new Date().toLocaleTimeString();
+  const element2 = (
+    <div>
+      <h1>Hello,world</h1>
+      <h2>It's {localTime}</h2>
+    </div>
+  );
+  const rootElement2 = document.getElementById("root2");
+  ReactDOM.render(element2, rootElement2);
 }
 
-setInterval(timeUpdate, 1000)
+setInterval(timeUpdate, 1000);
 ```
 
 ![](https://i.imgur.com/t6ZSM7O.gif)

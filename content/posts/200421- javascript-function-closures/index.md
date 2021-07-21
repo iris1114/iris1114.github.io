@@ -1,9 +1,10 @@
 ---
-title: 'JavaScript Function Invocation #11'
+title: "JavaScript Function Invocation #11"
 author: Iris Chew
 date: 2020-04-21
 hero: ./images/js11.png
 excerpt: JavaScript variables can belong to the local or global scope.Global variables can be made local (private) with closures.
+secret: true
 ---
 
 JavaScript variables can belong to the local or global scope.Global variables can be made local (private) with closures.
@@ -12,15 +13,15 @@ JavaScript variables can belong to the local or global scope.Global variables ca
 
 ```javascript
 function myFunction() {
-    var a = 4 //local variable
-    return a * a
+  var a = 4; //local variable
+  return a * a;
 }
 ```
 
 ```javascript
-var a = 4 //global variable
+var a = 4; //global variable
 function myFunction() {
-    return a * a
+  return a * a;
 }
 ```
 
@@ -33,17 +34,17 @@ _你可以使用全局變量，函數設置計數器遞增。_
 
 ```javascript
 // Initiate counter
-var counter = 0
+var counter = 0;
 
 // Function to increment counter
 function add() {
-    counter += 1
+  counter += 1;
 }
 
 // Call add() 3 times
-add()
-add()
-add()
+add();
+add();
+add();
 
 // The counter should now be 3
 ```
@@ -54,18 +55,18 @@ _問題來了，頁面上的任何腳本都能改變計數器，即便沒有調�
 
 ```javascript
 // Initiate counter
-var counter = 0
+var counter = 0;
 
 // Function to increment counter
 function add() {
-    var counter = 0
-    counter += 1
+  var counter = 0;
+  counter += 1;
 }
 
 // Call add() 3 times
-add()
-add()
-add()
+add();
+add();
+add();
 
 //The counter should now be 3. But it is 0
 ```
@@ -79,12 +80,12 @@ _內嵌函數 plus() 可以訪問父函數的 counter 變量：_
 
 ```javascript
 function add() {
-    var counter = 0
-    function plus() {
-        counter += 1
-    }
-    plus()
-    return counter //1
+  var counter = 0;
+  function plus() {
+    counter += 1;
+  }
+  plus();
+  return counter; //1
 }
 ```
 
@@ -96,15 +97,15 @@ _如果我們能在外部訪問 plus() 函數，這樣就能解決計數器的�
 
 ```javascript
 var add = (function() {
-    var counter = 0
-    return function() {
-        return (counter += 1)
-    }
-})()
+  var counter = 0;
+  return function() {
+    return (counter += 1);
+  };
+})();
 
-add() //1
-add() //2
-add() //3
+add(); //1
+add(); //2
+add(); //3
 ```
 
 The variable add is assigned the return value of a self-invoking function.

@@ -1,9 +1,10 @@
 ---
-title: 'JavaScript Function Parameters #9'
+title: "JavaScript Function Parameters #9"
 author: Iris Chew
 date: 2020-04-19
 hero: ./images/js9.png
 excerpt: A JavaScript function does not perform any checking on parameter values (arguments).
+secret: true
 ---
 
 A JavaScript function does not perform any checking on parameter values (arguments).
@@ -11,28 +12,28 @@ _js function 不會針對參數進行檢查_
 
 ### Function Parameters and Arguments
 
--   Function parameters are the names listed in the function definition.
-    _parameters(顯式參數)會在函數中定義時列出_
+- Function parameters are the names listed in the function definition.
+  _parameters(顯式參數)會在函數中定義時列出_
 
--   Function arguments are the real values passed to (and received by) the function.
-    _argument(隱式參數)指的是在使用函數時傳遞(或收到)真正的值_
+- Function arguments are the real values passed to (and received by) the function.
+  _argument(隱式參數)指的是在使用函數時傳遞(或收到)真正的值_
 
 ```javascript
 function functionName(parameter1, parameter2, parameter3) {
-    // code to be executed
+  // code to be executed
 }
 ```
 
 ### Parameter Rules
 
--   JavaScript function definitions do not specify data types for parameters.
-    _不會規定 parameters 的資料型態_
+- JavaScript function definitions do not specify data types for parameters.
+  _不會規定 parameters 的資料型態_
 
--   JavaScript functions do not perform type checking on the passed arguments.  
-    _不會對 argument 進行檢查_
+- JavaScript functions do not perform type checking on the passed arguments.  
+  _不會對 argument 進行檢查_
 
--   JavaScript functions do not check the number of arguments received.
-    _不會檢查 argument 的數量_
+- JavaScript functions do not check the number of arguments received.
+  _不會檢查 argument 的數量_
 
 ### Parameter Defaults
 
@@ -41,10 +42,10 @@ _若沒給參數，則預設為 undefined，但建議可給於參數一個默認
 
 ```javascript
 function myFunction(x, y) {
-    if (y === undefined) {
-        y = 0
-    }
-    return x * y //0
+  if (y === undefined) {
+    y = 0;
+  }
+  return x * y; //0
 }
 ```
 
@@ -56,28 +57,28 @@ _js 本身有內建物件稱為 arguments object（包含陣列），當 functio
 
 ```javascript
 function findMax() {
-    var i
-    var max = -Infinity
-    for (i = 0; i < arguments.length; i++) {
-        if (arguments[i] > max) {
-            max = arguments[i]
-        }
+  var i;
+  var max = -Infinity;
+  for (i = 0; i < arguments.length; i++) {
+    if (arguments[i] > max) {
+      max = arguments[i];
     }
-    return max
+  }
+  return max;
 }
-document.getElementById('demo').innerHTML = findMax(4, 5, 6)
+document.getElementById("demo").innerHTML = findMax(4, 5, 6);
 ```
 
 ```javascript
 function sumAll() {
-    var i
-    var sum = 0
-    for (i = 0; i < arguments.length; i++) {
-        sum += arguments[i]
-    }
-    return sum
+  var i;
+  var sum = 0;
+  for (i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
 }
-document.getElementById('demo').innerHTML = sumAll(1, 123, 500, 115, 44, 88) //871
+document.getElementById("demo").innerHTML = sumAll(1, 123, 500, 115, 44, 88); //871
 ```
 
 ### Arguments are Passed by Value

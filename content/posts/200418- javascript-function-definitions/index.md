@@ -1,9 +1,10 @@
 ---
-title: 'JavaScript Function Definitions #8'
+title: "JavaScript Function Definitions #8"
 author: Iris Chew
 date: 2020-04-18
 hero: ./images/js8.png
 excerpt: A JavaScript function is a block of code designed to perform a particular task.
+secret: true
 ---
 
 A JavaScript function is a block of code designed to perform a particular task.
@@ -16,8 +17,8 @@ Function names can contain letters, digits, underscores, and dollar signs ([same
 
 ```javascript
 function name(parameter1, parameter2, parameter3) {
-    // code to be executed
-    return parameter1 + parameter2
+  // code to be executed
+  return parameter1 + parameter2;
 }
 ```
 
@@ -27,17 +28,17 @@ A function expression can be stored in a variable:
 
 ```javascript
 var x = function(a, b) {
-    return a * b
-}
+  return a * b;
+};
 ```
 
 After a function expression has been stored in a variable, the variable can be used as a function:
 
 ```javascript
 var x = function(a, b) {
-    return a * b
-}
-var z = x(4, 3)
+  return a * b;
+};
+var z = x(4, 3);
 ```
 
 ### 3. The Function() Constructor
@@ -45,7 +46,7 @@ var z = x(4, 3)
 Functions can also be defined with a built-in JavaScript function constructor called Function().
 
 ```javascript
-var myFunction = new Function('a', 'b', 'return a * b')
+var myFunction = new Function("a", "b", "return a * b");
 ```
 
 > Most of the time, you can avoid using the new keyword in JavaScript.
@@ -61,9 +62,9 @@ You cannot self-invoke a function declaration.
 The function above is actually an anonymous self-invoking function (function without name).
 
 ```javascript
-;(function() {
-    var x = 'Hello!!' // I will invoke myself
-})()
+(function() {
+  var x = "Hello!!"; // I will invoke myself
+})();
 ```
 
 ### 5. Arrow Functions
@@ -75,11 +76,11 @@ You don't need the function keyword, the return keyword, and the curly brackets.
 ```javascript
 // ES5
 var x = function(x, y) {
-    return x * y
-}
+  return x * y;
+};
 
 // ES6
-const x = (x, y) => x * y
+const x = (x, y) => x * y;
 ```
 
 ### 6. Other
@@ -89,11 +90,11 @@ JavaScript functions can be used in expressions.
 
 ```javascript
 function myFunction(a, b) {
-    return a * b
+  return a * b;
 }
 
-var x = myFunction(4, 3)
-var x = myFunction(4, 3) * 2
+var x = myFunction(4, 3);
+var x = myFunction(4, 3) * 2;
 ```
 
 Functions are Objects
@@ -106,7 +107,7 @@ The arguments.length property returns the number of arguments received when the 
 
 ```javascript
 function myFunction(a, b) {
-    return arguments.length
+  return arguments.length;
 }
 ```
 
@@ -114,8 +115,8 @@ The toString() method returns the function as a string:
 
 ```javascript
 function myFunction(a, b) {
-    return a * b
+  return a * b;
 }
 
-var txt = myFunction.toString()
+var txt = myFunction.toString();
 ```

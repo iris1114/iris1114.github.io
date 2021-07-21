@@ -1,9 +1,10 @@
 ---
-title: '建立React開發環境 #02'
+title: "建立React開發環境 #02"
 author: Iris Chew
 date: 2020-10-02
 hero: ./images/react02.png
 excerpt:
+secret: true
 ---
 
 ## 安裝 node.js
