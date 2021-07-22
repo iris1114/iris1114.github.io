@@ -16,6 +16,7 @@ excerpt:
 事不宜遲馬上開始～ DAY 1 ～
 
 專案介紹： 按下鍵盤發出音樂效果。
+作品頁面： https://iris1114.github.io/javascript30/01_JavaScript-Drum-Kit/index.html
 
 ### 1. 做法：
 
@@ -99,7 +100,3 @@ audio /video method and properties:
   })();
 </script>
 ```
-
-### 7. 作品頁面
-
-https://iris1114.github.io/javascript30/01_JavaScript-Drum-Kit/index.html
