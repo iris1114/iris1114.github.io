@@ -40,7 +40,7 @@ requestAnimationFrame() ：通知瀏覽器我們想要產生動畫，並且要�
 ### 4. code
 
 ```javascript
-(function() {
+(() => {
   const hourHand = document.querySelector(".hour-hand");
   const minsHand = document.querySelector(".min-hand");
   const secondsHand = document.querySelector(".second-hand");

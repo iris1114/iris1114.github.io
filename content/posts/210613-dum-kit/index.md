@@ -15,7 +15,10 @@ excerpt:
 
 事不宜遲馬上開始～ DAY 1 ～
 
+---
+
 專案介紹： 按下鍵盤發出音樂效果。
+
 作品頁面： https://iris1114.github.io/javascript30/01_JavaScript-Drum-Kit/index.html
 
 ### 1. 做法：
@@ -44,7 +47,7 @@ excerpt:
   - 任何的鍵盤按鍵按下都有 keyCode，大寫和小寫是一樣的 keyCode。
   - 想要取得 input 的 value，也只有在 keyup 的事件上可以拿到目前最新的 value。
 
-> 這三者事件的觸發優先順序為：keydown→keypress→keyup
+這三者事件的觸發優先順序為：keydown→keypress→keyup
 
 ### 3. transitionend 事件
 
@@ -94,9 +97,6 @@ currentTime : 返回 audio/video 播放的當前位置（以秒計）
 
 ### 6. 參考資料
 
-更多 event:
+更多 event: https://developer.mozilla.org/en-US/docs/Web/Events
 
-[https://developer.mozilla.org/en-US/docs/Web/Events](https://developer.mozilla.org/en-US/docs/Web/Events)
-
-audio /video method and properties:
-[https://www.w3schools.com/tags/ref_av_dom.asp](https://www.w3schools.com/tags/ref_av_dom.asp)
+audio /video method and properties: https://www.w3schools.com/tags/ref_av_dom.asp
