@@ -1,5 +1,5 @@
 ---
-title: "挑戰JavaScript 30 Day1"
+title: "挑戰 JavaScript 30 Day1"
 author: JavaScript30
 date: 2021-06-13
 hero: ./images/drumKit.png
@@ -34,24 +34,23 @@ excerpt:
   - 按下鍵盤不放時，則會不斷地連續觸發該事件。
 
 - **keypress**
-
   - 只會針對可以輸出文字符號的按鍵有效 ， ESC、方向鍵等等無法觸法。
   - 會因為大小寫的不同取得不同的 keyCode。
   - 按下鍵盤不放時，則會不斷地連續觸發該事件。
-
+    ***
 - **keyup**
   - 是指放開鍵盤的那個剎那
   - 因為每次只會放開鍵盤一次，所以不會有連續觸發的狀況發生
   - 任何的鍵盤按鍵按下都有 keyCode，大寫和小寫是一樣的 keyCode。
   - 想要取得 input 的 value，也只有在 keyup 的事件上可以拿到目前最新的 value。
 
-這三者事件的觸發優先順序為：keydown→keypress→keyup
+> 這三者事件的觸發優先順序為：keydown→keypress→keyup
 
 ### 3. transitionend 事件
 
-transitionend 事件會在 CSS transition 結束後觸發。利用 transitionend 事件，監聽所有有 transition 的 CSS 屬性的 node ，在 css transition 執行結束後，移除相關 style。
+transitionend 事件會在 CSS transition 結束後觸發。利用 transitionend 事件，監聽所有有 transition 的 CSS 屬性的 node 。
 
-```jsx
+```javascript
 key.addEventListener("transitionend", transitionendHandle);
 ```
 
@@ -61,42 +60,43 @@ currentTime : 返回 audio/video 播放的當前位置（以秒計）
 
 若要重複播放，則將 `currentTime = 0;` ，從 0 再開始播放。
 
-### 5. 其他
+### 5. code
+
+```javascript
+<script>
+      (() => {
+        const palyHandle = (e) => {
+          const audio = document.querySelector(
+            `audio[data-key="${e.keyCode}"]`
+          );
+          const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+
+          if (audio) {
+            audio.currentTime = 0;
+            audio.play();
+            key.classList.add("playing");
+          }
+        };
+
+        const transitionendHandle = (e) => {
+          e.currentTarget.classList.remove("playing");
+        };
+
+        const keys = document.querySelectorAll(".key");
+        keys.forEach((key) => {
+          key.addEventListener("transitionend", transitionendHandle);
+        });
+
+        window.addEventListener("keydown", palyHandle);
+      })();
+</script>
+```
+
+### 6. 參考資料
 
 更多 event:
+
 [https://developer.mozilla.org/en-US/docs/Web/Events](https://developer.mozilla.org/en-US/docs/Web/Events)
 
 audio /video method and properties:
 [https://www.w3schools.com/tags/ref_av_dom.asp](https://www.w3schools.com/tags/ref_av_dom.asp)
-
-### 6. code
-
-```jsx
-<script>
-  (() => {
-    const palyHandle = (e) => {
-      const audio = document.querySelector(
-        `audio[data-key="${e.keyCode}"]`
-      );
-      const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
-
-      if (audio) {
-        audio.currentTime = 0;
-        audio.play();
-        key.classList.add("playing");
-      }
-    };
-
-    const transitionendHandle = (e) => {
-      e.currentTarget.classList.remove("playing");
-    };
-
-    const keys = document.querySelectorAll(".key");
-    keys.forEach((key) => {
-      key.addEventListener("transitionend", transitionendHandle);
-    });
-
-    window.addEventListener("keydown", palyHandle);
-  })();
-</script>
-```
