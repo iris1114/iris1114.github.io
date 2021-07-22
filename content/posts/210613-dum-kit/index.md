@@ -48,7 +48,7 @@ excerpt:
 
 ### 3. transitionend 事件
 
-transitionend 事件會在 CSS transition 結束後觸發。當 transition 完成前移除 transition 時，比如移除 css 的 transition-property 屬性，事件將不會被觸發。如在 transition 完成前設置 display 為"none"，事件同樣不會被觸發。
+transitionend 事件會在 CSS transition 結束後觸發。利用 transitionend 事件，監聽所有有 transition 的 CSS 屬性的 node ，在 css transition 執行結束後，移除相關 style。
 
 ```jsx
 key.addEventListener("transitionend", transitionendHandle);
@@ -99,3 +99,7 @@ audio /video method and properties:
   })();
 </script>
 ```
+
+### 7. 作品頁面
+
+https://iris1114.github.io/javascript30/01_JavaScript-Drum-Kit/index.html
