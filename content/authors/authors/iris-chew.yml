@@ -1,9 +1,10 @@
 name: Iris Chew
 bio: |
-    Who from a digital marketer to front-end engineer.
+  Who from a digital marketer to front-end engineer.
 avatar: ./avatars/iris-chew.png
 social:
-    - url: https://github.com/iris1114
-    - url: https://www.instagram.com/iris.justdoit/
-    - url: https://www.linkedin.com/in/iris-chew
+  - url: mailto:qweichew@gmail.com
+  - url: https://github.com/iris1114
+  - url: https://www.instagram.com/iris.justdoit/
+  - url: https://www.linkedin.com/in/iris-chew
 featured: true
