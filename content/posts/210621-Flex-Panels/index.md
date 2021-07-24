@@ -68,17 +68,19 @@ excerpt:
 
 ### 4. JavaScript 處理
 
-先取得所有 panel，當點擊時 toggle 要暫時的 css 效果， 就把兩個 className 加入即可。
+先取得所有 panel，當點擊時 toggle 要呈現的 css 效果， 就把兩個 className 加入即可。
 
 ```javascript
-const panels = document.querySelectorAll(".panel");
+(() => {
+  const panels = document.querySelectorAll(".panel");
 
-panels.forEach((panel) => {
-  panel.addEventListener("click", () => {
-    panel.classList.toggle("open");
-    panel.classList.toggle("show-text");
+  panels.forEach((panel) => {
+    panel.addEventListener("click", () => {
+      panel.classList.toggle("open");
+      panel.classList.toggle("show-text");
+    });
   });
-});
+})();
 ```
 
 wesbos 版本， 他有使用 transitionend , 當 CSS transition 結束後觸發 toggleActive function 。
