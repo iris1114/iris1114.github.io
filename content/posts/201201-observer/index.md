@@ -3,7 +3,7 @@ title: "Observer 好強大 - IntersectionObserver 筆記"
 author: JavaScript
 date: 2020-12-01
 hero: ./images/observer.png
-excerpt: 昨天上班接到一個需求是當畫面滑動到某個位置的時候，送出 GA 事件。菜菜的我只想到用 scroll 來監聽去算 offsetTop 等等，主管說可以用 observer 去處理，才發現了強大的 observer。
+excerpt: 昨天上班接到一個需求是當畫面滑動到某個位置的時候，送出 GA 事件。菜菜的我只想到用 scroll 來監聽去算 offsetTop 等等
 ---
 
 昨天上班接到一個需求是當畫面滑動到某個位置的時候，送出 GA 事件。菜菜的我只想到用 scroll 來監聽去算 offsetTop 等等，主管說可以用 observer 去處理，才發現了強大的 observer。

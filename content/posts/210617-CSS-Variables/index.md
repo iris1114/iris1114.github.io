@@ -3,7 +3,7 @@ title: "Day3: CSS Variables"
 author: JavaScript30
 date: 2021-06-17
 hero: ./images/hero.png
-excerpt:
+excerpt: "使用 JavaScript 及 CSS3 去調整圖片的邊框間距、模糊度、及背景顏色，標題 JS 也隨著背景顏色而改變。"
 ---
 
 專案介紹： 使用 JavaScript 及 CSS3 去調整圖片的邊框間距、模糊度、及背景顏色，標題 JS 也隨著背景顏色而改變。

@@ -3,7 +3,7 @@ title: "Day2:  JS and CSS Clock"
 author: JavaScript30
 date: 2021-06-15
 hero: ./images/hero.png
-excerpt:
+excerpt: 專案介紹： 實作一個時鐘。
 ---
 
 專案介紹： 實作一個時鐘。
@@ -27,7 +27,7 @@ const minsDegrees = mins * 6 + (seconds * 6) / 60; //（360度/60分鐘= 1分鐘
 const hourDegrees = hour * 30 + (mins * 30) / 60; //（360度/12小時 = 1小時30度， 目前小時*30度）+（目前分鐘*30度/60分鐘）
 ```
 
-在時針的部分，為什麼還要加後面的 `(mins * 30 / 60)` 呢？ 
+在時針的部分，為什麼還要加後面的 `(mins * 30 / 60)` 呢？
 
 因為當目前時間為 1145 時，時針也會趨近 12 的方向，所以需加入（目前分鐘\*30 度/60 分鐘），讓時針跟著一起動，而不會一直只指向 11 點。
 

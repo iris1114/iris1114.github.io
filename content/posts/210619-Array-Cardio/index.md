@@ -3,7 +3,7 @@ title: "Day4:  Array Cardio 1 💪"
 author: JavaScript30
 date: 2021-06-19
 hero: ./images/hero.png
-excerpt:
+excerpt: "練習 array 的應用，包含 filter 、 map 、 sort 、 reduce"
 ---
 
 專案介紹： 練習 array 的應用，包含 filter 、 map 、 sort 、 reduce
