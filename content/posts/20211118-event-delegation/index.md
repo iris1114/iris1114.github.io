@@ -23,29 +23,29 @@ excerpt: "事件委託，就是利用冒泡原理，把事件監聽器委託給�
 
 ### 程式 demo
 
-![](https://i.imgur.com/Y9WZvk1.gif)
+![](https://i.imgur.com/L2an6Fp.gif)
 
-```htmlmixed=
+```html
 <div id="container">
-    <div class="card">
-          <h2>Card 1</h2>
-          <p>Lorem ipsum dolor sit amet.</p>
-          <button class="remove_btn">delete</button>
-    </div>
-    <div class="card">
-        <h2>Card 2</h2>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <button class="remove_btn">delete</button>
-    </div>
-    <div class="card">
-        <h2>Card 3</h2>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <button class="remove_btn">delete</button>
-    </div>
+  <div class="card">
+    <h2>Card 1</h2>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <button class="remove_btn">delete</button>
+  </div>
+  <div class="card">
+    <h2>Card 2</h2>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <button class="remove_btn">delete</button>
+  </div>
+  <div class="card">
+    <h2>Card 3</h2>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <button class="remove_btn">delete</button>
+  </div>
 </div>
 ```
 
-```javascript=
+```javascript
 document.getElementById("container").addEventListener("click", (event) => {
   const target = event.target;
 
