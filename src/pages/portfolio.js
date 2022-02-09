@@ -6,14 +6,6 @@ import styled from "styled-components";
 import { portfolio } from "../assets/js/data";
 import "../assets/css/style.css";
 import Card from "../components/Card";
-import Masony from "react-masonry-component";
-
-const masonryOptions = {
-  fitWidth: true,
-  columnWidth: 300,
-  gutter: 20,
-  itemSelector: ".project",
-};
 
 function Portfolio() {
   return (
@@ -21,14 +13,8 @@ function Portfolio() {
       <SEO />
       <Section>
         <PortfolioSection>
-          <h1 className="title">Portfolio</h1>
-
-          <Masony
-            className="list"
-            options={masonryOptions}
-            disableImagesLoaded={false}
-            updateOnEachImageLoad={false}
-          >
+          <h1 className="title">Side Project</h1>
+          <div className="project_list">
             {portfolio &&
               portfolio.map((project, index) => (
                 <div className="project" key={index}>
@@ -42,8 +28,9 @@ function Portfolio() {
                     tags={project.tags}
                   />
                 </div>
-              ))}
-          </Masony>
+              ))
+            }
+          </div>
         </PortfolioSection>
       </Section>
     </Layout>
@@ -64,11 +51,17 @@ const PortfolioSection = styled.div`
     margin: 50px auto;
   }
 
+  .project_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
   .project {
     display: flex;
     width: 300px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-    margin: 20px 0;
+    margin: 20px 2%;
   }
 `;
 

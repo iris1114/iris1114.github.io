@@ -7,13 +7,8 @@ const Card = ({ title, desc, imgUrl, videoSrc, demoUrl, tags }) => {
       <a href={demoUrl}>
         <div className="f-lg-m f-m card_title">{title}</div>
         <div className="image_section">
-          {videoSrc ? (
-            <video width="100%" autoPlay loop muted>
-              <source src={videoSrc} type="video/mp4" />
-            </video>
-          ) : (
-            <img src={imgUrl} alt={title} />
-          )}
+          <img src={imgUrl} alt={title} />
+          <div className="image_padding"></div>
         </div>
         <div className="tags_section">
           {tags.map((tag, index) => {
@@ -31,22 +26,29 @@ const Card = ({ title, desc, imgUrl, videoSrc, demoUrl, tags }) => {
 
 const StyledCard = styled.div`
   margin: 5px;
-  opacity: 0.7;
+  width: 300px;
 
   .card_title {
     text-align: left;
   }
 
+  .image_section{
+    position: relative;
+
+    .image_padding{
+      position: absolute;
+      top: 0px;
+      padding-top: 300px;
+      width: 100%;
+    }
+  }
+  
   .tags_section {
     text-align: right;
 
     .tag {
       margin-right: 10px;
     }
-  }
-
-  &:hover {
-    opacity: 1;
   }
 `;
 
