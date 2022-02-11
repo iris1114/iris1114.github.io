@@ -45,12 +45,6 @@ const PortfolioSection = styled.div`
     padding-top: 80px;
   }
 
-  .list {
-    width: 100%;
-    list-style: none;
-    margin: 50px auto;
-  }
-
   .project_list {
     display: flex;
     flex-wrap: wrap;
