@@ -77,5 +77,5 @@ HTMLElement.offsetTop 為只讀屬性，它返回當前元素相對於其 offset
 
 ## 參考資料
 
-https://blog.epoch.tw/
-https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetTop
+- https://blog.epoch.tw/
+- https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetTop

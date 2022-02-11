@@ -61,6 +61,6 @@ document.getElementById("container").addEventListener("click", (event) => {
 
 ## 參考資料
 
-https://cythilya.github.io/2015/07/08/javascript-event-delegation/
-https://javascript.info/event-delegation
-https://developer.mozilla.org/zh-CN/docs/Web/API/Element/closest
+- https://cythilya.github.io/2015/07/08/javascript-event-delegation/
+- https://javascript.info/event-delegation
+- https://developer.mozilla.org/zh-CN/docs/Web/API/Element/closest
