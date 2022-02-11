@@ -2,7 +2,7 @@ import cakeImg from "../images/cake.png";
 import drinkImg from "../images/drink.png";
 import userImg from "../images/user.png";
 import ourskyImg from "../images/oursky.png";
-import restCountries from "../images/restCountries.png";
+import restCountries from "../images/restCountries.jpeg";
 import userManage from "../images/userManage.jpg";
 import gulp4 from "../images/gulp4.png";
 

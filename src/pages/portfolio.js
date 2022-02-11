@@ -5,7 +5,6 @@ import SEO from "@iris1114/gatsby-theme-blog/src/components/SEO";
 import styled from "styled-components";
 import { portfolio } from "../assets/js/data";
 import "../assets/css/style.css";
-import Card from "../components/Card";
 
 function Portfolio() {
   return (
@@ -18,15 +17,21 @@ function Portfolio() {
             {portfolio &&
               portfolio.map((project, index) => (
                 <div className="project" key={index}>
-                  <Card
-                    key={project.id}
-                    title={project.title}
-                    desc={project.desc}
-                    imgUrl={project.imageSrc}
-                    videoSrc={project.videoSrc}
-                    demoUrl={project.demoUrl}
-                    tags={project.tags}
-                  />
+                    <a href={project.demoUrl}>
+                      <div className="image_section">
+                        <img src={project.imageSrc} alt={project.title} />
+                      </div>
+                      <div className="f-lg-m f-m card_title">{project.title}</div>
+                      <div className="tags_section">
+                        {project.tags.map((tag, index) => {
+                          return (
+                            <span className="f-lg-s f-s tag" key={index}>
+                              #{tag}
+                            </span>
+                          );
+                        })}
+                      </div>
+                    </a>
                 </div>
               ))
             }
@@ -53,9 +58,35 @@ const PortfolioSection = styled.div`
 
   .project {
     display: flex;
-    width: 300px;
+    flex-wrap: wrap;
+    width: 330px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-    margin: 20px 2%;
+    margin: 20px 1%;
+    background: rgb(255, 255, 255);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(219, 229, 230);
+    border-radius: 10px;
+    overflow: hidden;
+
+  .card_title {
+    text-align: left;
+  }
+
+  .image_section{
+    position: relative;
+    height: 300px;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  
+  .tags_section {
+    text-align: right;
+
+    .tag {
+      margin-right: 10px;
+    }
+  }
   }
 `;
 
