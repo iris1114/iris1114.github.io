@@ -71,17 +71,21 @@ const PortfolioSection = styled.div`
 
   .card_title {
     text-align: left;
+    margin: 10px;
+    font-weight: 500;
   }
 
   .image_section{
     position: relative;
-    height: 300px;
+    height: 260px;
     object-fit: cover;
     overflow: hidden;
   }
   
   .tags_section {
     text-align: right;
+    margin: 10px 0px;
+    font-size: 12px;
 
     .tag {
       margin-right: 10px;
